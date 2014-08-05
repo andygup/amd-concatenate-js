@@ -1,7 +1,7 @@
 {
-    "name": "offline-editor",
+    "name": "amd-concatenate-js",
     "version": "0.0.1",
-    "description": "Lighweight set of libraries for working offline with map tiles and ArcGIS feature services",
+    "description": "This repo describes a JavaScript AMD coding pattern for easily concatenating and minifying modules and support libraries",
     "author": "Andy Gup <agup@esri.com> (http://blog.andygup.net)",
     "license": "Apache 2",
     "contributors": [

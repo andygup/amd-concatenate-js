@@ -1,0 +1,52 @@
+<!--
+
+This sample demonstrates one pattern for creating a single JavaScript file
+that contains a main AMD-based module as well as concatenated, non-AMD supported libraries.
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>Simple Map</title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
+    <style>
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #FFF;
+            overflow: hidden;
+            font-family: "Trebuchet MS";
+        }
+    </style>
+    <script src="http://js.arcgis.com/3.10/"></script>
+    <script>
+        var map;
+
+        require(["esri/map", "dist/test-src.js","dojo/domReady!"], function(Map) {
+
+            var module = new AMDModule();
+            console.log("Get AMDModule hello value: " + module.hello);
+            module.calc();
+
+            var t = new O.esri.fixIt();
+            console.log("fixIt variable1 value: " + t.variable1);
+
+            map = new Map("map", {
+                basemap: "topo",
+                center: [-122.45, 37.75], // longitude, latitude
+                zoom: 13
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="map"></div>
+</body>
+</html>
